@@ -1,0 +1,30 @@
+<Page class="page"
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar title="Chat">
+        <ActionItem tap="onConnect" ios.systemIcon="9" ios.position="left" android.systemIcon="ic_menu_add" android.position="actionBar"></ActionItem>
+        <ActionItem tap="onRefresh" ios.systemIcon="13" ios.position="left" android.systemIcon="ic_menu_refresh" android.position="actionBar"></ActionItem>
+    </ActionBar>
+
+    <GridLayout>
+        <GridLayout rows="*,50" columns="*,100">
+        	<ListView row="0" colSpan="2" items="{{ messages }}" itemTap="secondListViewItemTap" separatorColor="transparent">
+			    <ListView.itemTemplate>
+			        <StackLayout class="list-group-item" class="linea">
+			            <GridLayout columns="auto" rows="auto" horizontalAlignment="center" verticalAlignment="center" visibility="{{ type ? 'collapsed' : 'visible' }}">
+                            <Label col="0" row="0" class="info"  text="{{ txt }}" />
+                        </GridLayout>
+                        <!--<Label visibility="{{ type ? 'visible' : 'collapsed' }}" text="{{ date }}" />-->
+                        <GridLayout columns="auto" rows="auto" horizontalAlignment="{{ (id == idUser)? 'left': 'right' }}" visibility="{{ type ? 'visible' : 'collapsed' }}">
+                            <Label class="message-other"  text="{{ (id == idUser) ? '[' +autor+'] ' + txt : '[Tú] ' + txt }}" />
+                            <!--<Label class="message-other"  text="{{ '[' +autor+'] ' + txt }}" />-->
+                        </GridLayout>
+			        </StackLayout>
+			    </ListView.itemTemplate>
+			</ListView>
+			<TextField row="1" col="0" autocorrect="false" hint="Mensaje" text="{{ message }}" returnKeyType="done"/>
+        	<Button row="1" col="1" text="Enviar" tap="send" />
+        </GridLayout>
+    </GridLayout>
+</Page>

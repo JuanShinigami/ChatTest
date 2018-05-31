@@ -1,0 +1,33 @@
+.item{
+	font-size: 22;
+	font-weight: bold;
+	margin-left: 12;
+	margin-bottom: 5;	
+}
+
+.message-other{
+	background-color: #72acfa;
+	border-radius: 15;
+	padding-right: 15;
+	padding-left: 15;
+	padding-top: 5;
+	padding-bottom: 5;
+	font-size: 20;
+	color: #deecff;
+}
+#other{
+	
+}
+
+.info{
+	font-style: italic;
+	text-align: center;
+	background-color: #cff7ff;
+	border-radius: 25;
+	padding: 4;
+}
+
+.linea{
+	margin-top: 10;
+	margin-bottom: 10;
+}
